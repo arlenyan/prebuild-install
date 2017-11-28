@@ -44,9 +44,6 @@ if (util.isYarnPath(execPath) && /node_modules/.test(process.cwd())) {
 } else if (!(typeof pkg._from === 'string')) {
   log.info('install', 'installing standalone, skipping download.')
   process.exit(1)
-} else if (pkg._from.length > 4 && pkg._from.substr(0, 4) === 'git+') {
-  log.info('install', 'installing from git repository, skipping download.')
-  process.exit(1)
 } else if (opts.compile === true || opts.prebuild === false) {
   log.info('install', '--build-from-source specified, not attempting download.')
   process.exit(1)
